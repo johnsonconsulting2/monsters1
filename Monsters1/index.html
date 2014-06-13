@@ -2,9 +2,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 
+    <input type="text" id="Name" placeholder="Name" />
+    <input type="text" id="Description" placeholder="Description" />
+    <input type="text" id="Picture" placeholder="Picture" />
+    <button onclick="myApp.CreateMonster();">Add Monster</button>
+    <button onclick="myApp.DeleteMonster();">Delete Monster</button>
+
+    <div id="tableOutput"></div>
+
+    <!--Modal begins here-->
+    <div id="EditModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="ModalTitle" class="modal-title">Modal Title</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="EditName" placeholder="Name" />
+                    <input type="text" id="EditDescription" placeholder="Description" />
+                    <input type="text" id="EditPicture" placeholder="Picture" />
+                    <input type="hidden" id="EditId" />
+
+              
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="myApp.SaveUpdateMonster();">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script src="Scripts/jquery-1.9.0.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
